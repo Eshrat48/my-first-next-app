@@ -1,10 +1,10 @@
-// pages/EventDetailsPage.jsx
+// EventDetailsPage.jsx
 "use client";
 
 export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter, useParams } from 'next/navigation';
 import { Calendar, MapPin, DollarSign, Users, ArrowLeft, Clock, Ticket } from 'lucide-react';
 
 import Navbar from '@/components/Navbar';
@@ -14,13 +14,9 @@ import { useEvents } from '@/contexts/EventContext';
 import { toast } from 'sonner';
 
 
-export async function getServerSideProps() {
-  return { props: {} };
-}
-
 export default function EventDetailsPage() {
   const router = useRouter();
-  const { eventId } = router.query;
+  const { eventId } = useParams();
   const { getEventById } = useEvents();
     
   const event = getEventById(eventId);
@@ -64,7 +60,7 @@ export default function EventDetailsPage() {
   };
   
   const handleCopyLink = async () => {
-      const eventUrl = `${window.location.origin}/events/${event.id}`;
+      const eventUrl = `${window.location.origin}/EventDetailsPage/${event.id}`;
       try {
         const tempInput = document.createElement('input');
         document.body.appendChild(tempInput);

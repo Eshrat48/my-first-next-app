@@ -1,6 +1,8 @@
 // src/pages/AddEventPage.jsx
 "use client";
 
+export const dynamic = 'force-dynamic';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Calendar, MapPin, DollarSign, Users, Image as ImageIcon } from 'lucide-react';
