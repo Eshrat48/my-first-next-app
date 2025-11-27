@@ -1,8 +1,8 @@
-// pages/EventDetailsPage.tsx
+// pages/EventDetailsPage.jsx
 "use client";
 
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { Calendar, MapPin, DollarSign, Users, ArrowLeft, Clock, Ticket } from 'lucide-react';
 
 import Navbar from '@/components/Navbar'; 
@@ -11,10 +11,11 @@ import { useEvents } from '@/contexts/EventContext';
 
 import { toast } from 'sonner';
 
+
 export default function EventDetailsPage() {
   const params = useParams();
   
-  const eventId = params.eventId;
+  const { eventId } = router.query; 
   
   const router = useRouter(); 
   const { getEventById } = useEvents();
