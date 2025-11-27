@@ -13,11 +13,8 @@ import { toast } from 'sonner';
 
 
 export default function EventDetailsPage() {
-  const params = useParams();
-  
-  const { eventId } = router.query; 
-  
-  const router = useRouter(); 
+  const router = useRouter();
+  const { eventId } = router.query;
   const { getEventById } = useEvents();
     
   const event = getEventById(eventId);
