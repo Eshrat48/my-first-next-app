@@ -2,6 +2,7 @@
 
 A modern, full-featured event management platform built with React, TypeScript, and Tailwind CSS. EventHub allows users to discover, book, and manage events with a polished UI and seamless user experience.
 
+Live Link : [https://my-first-next-app-indol-iota.vercel.app/]
 ##  Features
 
 ### Public Pages
